@@ -196,12 +196,18 @@
 }
 
 @media (max-width: 768px) {
+  .reservation-section {
+    padding: var(--space-12) var(--space-4);
+  }
+
   .reservation-card-wrapper {
-    padding: var(--space-6);
+    padding: var(--space-5);
+    border-radius: var(--radius-xl);
   }
 
   .form-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-4);
   }
 
   .reservation-submit-row {

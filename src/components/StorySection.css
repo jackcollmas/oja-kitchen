@@ -147,10 +147,41 @@
 @media (max-width: 992px) {
   .story-split-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-10);
+    gap: var(--space-8);
   }
 
   .story-image-primary-wrapper {
-    height: 380px;
+    height: 340px;
+  }
+}
+
+@media (max-width: 640px) {
+  .story-section {
+    padding: var(--space-12) var(--space-4);
+  }
+
+  .story-image-primary-wrapper {
+    height: 240px;
+  }
+
+  .story-card-overlay {
+    padding: var(--space-4);
+    bottom: var(--space-3);
+    left: var(--space-3);
+    right: var(--space-3);
+  }
+
+  .overlay-quote {
+    font-size: 0.85rem;
+  }
+
+  .story-paragraph.highlight {
+    font-size: 1.15rem;
+    line-height: 1.5;
+  }
+
+  .story-paragraph {
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 }

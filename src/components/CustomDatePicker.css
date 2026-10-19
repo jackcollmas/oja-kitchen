@@ -57,6 +57,7 @@
   bottom: calc(100% + 8px);
   left: 0;
   width: 320px;
+  max-width: calc(100vw - 48px);
   background: #191612;
   border: 1px solid rgba(255, 235, 215, 0.2);
   border-radius: var(--radius-xl);

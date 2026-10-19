@@ -351,7 +351,7 @@
 @media (max-width: 1024px) {
   .showcase-split-stage {
     grid-template-columns: 1fr;
-    gap: var(--space-10);
+    gap: var(--space-8);
   }
 
   .showcase-sticky-stage {
@@ -360,6 +360,7 @@
 
   .dish-card-mobile-media {
     display: block;
+    height: 240px;
   }
 
   .dish-story-card {
@@ -369,7 +370,100 @@
   }
 
   .showcase-scroll-column {
-    gap: var(--space-10);
+    gap: var(--space-8);
     padding: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .dishes-showcase-section {
+    padding: var(--space-12) var(--space-4);
+  }
+
+  .showcase-header {
+    margin-bottom: var(--space-8);
+  }
+
+  .section-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+    line-height: 1.2;
+    margin-bottom: var(--space-2);
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .dish-story-card {
+    padding: var(--space-4);
+    border-radius: var(--radius-xl);
+  }
+
+  .dish-card-mobile-media {
+    height: 210px;
+    margin-bottom: var(--space-4);
+    border-radius: var(--radius-md);
+  }
+
+  .mobile-dish-badge {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+  }
+
+  .dish-card-step {
+    font-size: 0.9rem;
+  }
+
+  .dish-card-tag {
+    font-size: 0.75rem;
+  }
+
+  .dish-card-title {
+    font-size: 1.55rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .dish-price {
+    font-size: 1.35rem;
+  }
+
+  .dish-origin-tag {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+  }
+
+  .dish-card-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+  }
+
+  .dish-flavor-notes {
+    padding: var(--space-3) var(--space-3);
+    margin-bottom: var(--space-5);
+    font-size: 0.82rem;
+  }
+
+  .dish-card-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-2);
+  }
+
+  .btn-order-dish {
+    justify-content: center;
+    padding: var(--space-3) var(--space-5);
+    font-size: 0.82rem;
+  }
+
+  .order-hint {
+    text-align: center;
+    font-size: 0.75rem;
   }
 }
