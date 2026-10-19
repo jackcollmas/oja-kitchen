@@ -386,28 +386,79 @@
 }
 
 @media (max-width: 640px) {
+  .hero-section {
+    min-height: 100svh;
+    padding: 85px var(--space-4) var(--space-12);
+    justify-content: flex-start;
+  }
+
+  .hero-content-container {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .hero-badge-pill {
+    padding: 4px 12px;
+    margin-bottom: var(--space-4);
+  }
+
+  .badge-text {
+    font-size: 0.65rem;
+  }
+
+  .hero-title {
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-title-top {
+    font-size: 1.6rem;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-title-accent {
+    font-size: 2.6rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-6);
+    padding: 0 var(--space-2);
+  }
+
   .hero-cta-group {
     flex-direction: column;
     width: 100%;
+    gap: var(--space-3);
+    margin-bottom: var(--space-8);
   }
 
   .btn-hero-primary,
   .btn-hero-secondary {
     width: 100%;
     justify-content: center;
+    padding: var(--space-3) var(--space-5);
+    font-size: 0.8rem;
   }
 
   .hero-stats-row {
-    gap: var(--space-4);
-    padding: var(--space-3) var(--space-4);
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-2);
     width: 100%;
   }
 
   .stat-value {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-lg);
   }
 
   .stat-label {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.02em;
+  }
+
+  .scroll-indicator {
+    display: none;
   }
 }

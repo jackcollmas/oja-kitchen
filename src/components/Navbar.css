@@ -266,3 +266,23 @@
     display: none;
   }
 }
+
+@media (max-width: 480px) {
+  .navbar-header {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .brand-logo-img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-title {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+  }
+
+  .brand-sub {
+    font-size: 0.55rem;
+  }
+}
