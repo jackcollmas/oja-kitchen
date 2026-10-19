@@ -42,23 +42,37 @@ export default function MenuSection({ fullMenu, onSelectDish }) {
 
         {/* Menu Grid */}
         <div className="menu-items-grid">
-          {currentItems.map((item, idx) => (
+          {currentItems.map((item) => (
             <div key={item.name} className="menu-card">
-              <div className="menu-card-top">
-                <h4 className="menu-item-name">{item.name}</h4>
-                <div className="menu-item-line" />
-                <span className="menu-item-price">{item.price}</span>
-              </div>
-              <p className="menu-item-desc">{item.desc}</p>
-              <div className="menu-card-footer">
-                <span className="menu-dietary-badge">Chef Crafted</span>
-                <button
-                  type="button"
-                  className="menu-quick-add"
-                  onClick={() => onSelectDish(item)}
-                >
-                  + Add to Order
-                </button>
+              {item.image && (
+                <div className="menu-card-media">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="menu-card-img"
+                    loading="lazy"
+                  />
+                  <div className="menu-card-img-overlay" />
+                </div>
+              )}
+
+              <div className="menu-card-content">
+                <div className="menu-card-top">
+                  <h4 className="menu-item-name">{item.name}</h4>
+                  <div className="menu-item-line" />
+                  <span className="menu-item-price">{item.price}</span>
+                </div>
+                <p className="menu-item-desc">{item.desc}</p>
+                <div className="menu-card-footer">
+                  <span className="menu-dietary-badge">Chef Crafted</span>
+                  <button
+                    type="button"
+                    className="menu-quick-add"
+                    onClick={() => onSelectDish(item)}
+                  >
+                    + View & Order
+                  </button>
+                </div>
               </div>
             </div>
           ))}

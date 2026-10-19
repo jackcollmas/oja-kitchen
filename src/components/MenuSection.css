@@ -61,14 +61,15 @@
 }
 
 .menu-card {
-  padding: var(--space-6);
+  padding: var(--space-4);
   border-radius: var(--radius-xl);
   background: var(--color-bg-base);
   border: 1px solid var(--color-border-subtle);
   transition: all var(--transition-normal);
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row;
+  align-items: stretch;
+  gap: var(--space-5);
   min-width: 0;
   overflow: hidden;
 }
@@ -76,7 +77,43 @@
 .menu-card:hover {
   border-color: var(--color-border-hover);
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(224, 79, 22, 0.12);
+}
+
+/* Dish image on the left side */
+.menu-card-media {
+  position: relative;
+  width: 130px;
+  min-width: 130px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-bg-surface-elevated);
+}
+
+.menu-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.menu-card:hover .menu-card-img {
+  transform: scale(1.08);
+}
+
+.menu-card-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(15, 13, 11, 0.45) 100%);
+}
+
+/* Content on the remaining side */
+.menu-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
 }
 
 .menu-card-top {
@@ -221,5 +258,18 @@
   .btn-tasting-book {
     width: 100%;
     text-align: center;
+  }
+}
+
+@media (max-width: 580px) {
+  .menu-card {
+    flex-direction: column;
+    padding: var(--space-4);
+  }
+
+  .menu-card-media {
+    width: 100%;
+    height: 180px;
+    min-width: unset;
   }
 }

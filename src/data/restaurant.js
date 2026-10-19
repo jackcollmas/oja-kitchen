@@ -11,7 +11,7 @@ export const RESTAURANT_DATA = {
     title: 'THE SOUL OF NIGERIAN FIRE',
     subtitle:
       'Where ancestral open-hearth embers meet avant-garde West African culinary artistry. Taste the smoke, the warmth, the celebration.',
-    image: '/dishes/suya',
+    image: '/dishes/suya.png',
     stat1: { value: '48hr', label: 'Smoked Marinade' },
     stat2: { value: '100%', label: 'Ancestral Herbs' },
     stat3: { value: '4.9 ★', label: 'Culinary Acclaim' },
@@ -26,7 +26,7 @@ export const RESTAURANT_DATA = {
       description:
         'Prime pasture-fed beef strip loin skewers dry-rubbed in our secret 12-spice northern yaji blend, char-grilled over aromatic hardwood coals, finished with pickled red onions and fresh ginger-infused honey drizzle.',
       notes: 'Notes: Hardwood charcoal smoke, roasted peanut crust, scotch bonnet heat',
-      image: '/dishes/suya',
+      image: '/dishes/suya.png',
       badge: 'Chef Signature',
     },
     {
@@ -37,7 +37,7 @@ export const RESTAURANT_DATA = {
       description:
         'Aged long-grain rice slow-braised over smoking red cherry-wood with heirloom plum tomatoes, sweet bell peppers, and smoked crayfish broth. Crowned with char-grilled tiger prawns and caramelized dodo batons.',
       notes: 'Notes: Bottom-pot socarrat smoke, sweet caramelized plantain, tiger prawn umami',
-      image: '/dishes/smoky_jollof',
+      image: '/dishes/smoky_jollof.png',
       badge: 'Celebration Icon',
     },
     {
@@ -48,7 +48,7 @@ export const RESTAURANT_DATA = {
       description:
         'Toasted hand-shelled melon seeds simmered in bleached palm oil with shredded bitterleaf, scent leaf, and dry-cured smoked catfish. Served alongside melt-in-mouth slow-braised oxtail and warm, velvet pounded yam.',
       notes: 'Notes: Rich nutty broth, tender collagen oxtail, aromatic wild scent leaf',
-      image: '/dishes/egusi_soup',
+      image: '/dishes/egusi_soup.png',
       badge: 'Ancestral Classic',
     },
     {
@@ -59,7 +59,7 @@ export const RESTAURANT_DATA = {
       description:
         'Line-caught river catfish poached in a clarified golden broth of alligator pepper, uda pods, ehuru (calabash nutmeg), and fresh torn garden herbs. Searing, fragrant, and profoundly invigorating.',
       notes: 'Notes: Alligator pepper zest, toasted calabash nutmeg, restorative steam',
-      image: '/dishes/pepper_soup',
+      image: '/dishes/pepper_soup.png',
       badge: 'Night Market Elixir',
     },
   ],
@@ -70,21 +70,25 @@ export const RESTAURANT_DATA = {
         name: 'Gourmet Asun Croquettes',
         price: '₦ 14,000',
         desc: 'Crispy panko goat meat croquettes with roasted scotch bonnet reduction and green herb emulsion.',
+        image: '/dishes/croquettes.jfif',
       },
       {
         name: 'Truffle Yam Fries & Suya Mayo',
         price: '₦ 9,500',
         desc: 'Twice-cooked white yam batons drizzled with white truffle oil and house-whipped yaji mayonnaise.',
+        image: '/dishes/truffle_fries.jfif',
       },
       {
         name: 'Charred Snail in Spicy Pepper Sauce',
         price: '₦ 19,000',
         desc: 'Giant African land snails sautéed in caramelized sweet pepper paste and scallions.',
+        image: '/dishes/charred_snail.jfif',
       },
       {
         name: 'Golden Puff-Puff with Palm Treacle',
         price: '₦ 8,000',
         desc: 'Airy nutmeg-infused fried dough pillows served with dark spiced palm sugar dip.',
+        image: '/dishes/golden-puff-puff.jfif',
       },
     ],
     mains: [
@@ -92,21 +96,25 @@ export const RESTAURANT_DATA = {
         name: '48-Hour Short Rib Ayamase (Ofada)',
         price: '₦ 34,000',
         desc: 'Bleached palm oil green pepper stew, fermented locust beans (iru), boiled farm eggs, and fragrant unpolished ofada rice.',
+        image: '/dishes/ayamase.jpg',
       },
       {
         name: 'Seafood Okra Royale',
         price: '₦ 36,000',
         desc: 'Finely sliced crunchy okra with jumbo tiger prawns, blue swimmer crab, calamari rings, and scotch bonnet relish.',
+        image: '/dishes/seafood_okra_royale.jpg',
       },
       {
         name: 'Honey-Glazed Roasted Guinea Fowl',
         price: '₦ 29,500',
         desc: 'Spiced marinated whole bird slow-roasted over hardwood charcoal, served with roasted sweet potato mash.',
+        image: '/dishes/honey_glazed_fowl.jfif',
       },
       {
         name: 'Efo Riro with Smoked Assorted Cuts',
         price: '₦ 30,000',
         desc: 'Rich spinach pot cooked with dried shrimp, pomo, tripe, and shaki, served with choice of swallow.',
+        image: '/dishes/eforiro.jfif',
       },
     ],
     drinks: [
@@ -114,16 +122,19 @@ export const RESTAURANT_DATA = {
         name: 'Zobo Sangria Royale',
         price: '₦ 8,500',
         desc: 'Wild hibiscus flower reduction, star anise, ginger, pressed orange, and sparkling champagne splash.',
+        image: '/dishes/zobo_royale.jfif',
       },
       {
         name: 'Smoked Palm Wine Highball',
         price: '₦ 9,000',
         desc: 'Fresh morning palm sap, infused with mezcal smoke, lime zest, and charred rosemary sprig.',
+        image: '/dishes/smoked_palmwine.jfif',
       },
       {
         name: 'Chapman 1960 Reserve',
         price: '₦ 7,500',
         desc: 'House-made grenadine, aromatic Angostura bitters, fresh cucumber, orange wheel, and sparkling tonic.',
+        image: '/dishes/1960_chapman.jfif',
       },
     ],
   },

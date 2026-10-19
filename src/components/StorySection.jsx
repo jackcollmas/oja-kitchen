@@ -45,7 +45,7 @@ export default function StorySection({ story }) {
             <div className="story-image-stack">
               <div className="story-image-primary-wrapper">
                 <img
-                  src="/dishes/pepper_soup"
+                  src="/dishes/pepper_soup.png"
                   alt="Steaming fresh river catfish pepper soup in cast iron pot"
                   className="story-img-primary"
                   loading="lazy"
