@@ -168,12 +168,14 @@ export default function ReservationsSection({ isOpen, onClose }) {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="res-date">Date</label>
+                  <label htmlFor="res-date">Date *</label>
                   <input
                     id="res-date"
+                    className="reservation-date-input"
                     type="date"
                     name="date"
                     required
+                    min={new Date().toISOString().split('T')[0]}
                     value={formData.date}
                     onChange={handleChange}
                   />
