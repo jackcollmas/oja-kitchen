@@ -14,14 +14,54 @@ export default function ReservationsSection({ isOpen, onClose }) {
   })
 
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
+    setLoading(true)
+    setErrorMessage('')
+
+    const accessKey =
+      import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '92db64c7-93e6-412c-bdf1-ebbb1d2877b8'
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `New Table Reservation: ${formData.name} (${formData.guests})`,
+          from_name: 'Ọjà Kitchen Booking System',
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          guests: formData.guests,
+          date: formData.date,
+          time: formData.time,
+          experience: formData.experience,
+          specialNotes: formData.specialNotes || 'None',
+        }),
+      })
+
+      const result = await response.json()
+      if (result.success) {
+        setSubmitted(true)
+      } else {
+        setErrorMessage(result.message || 'Something went wrong. Please try again.')
+      }
+    } catch (err) {
+      setErrorMessage('Network error submitting reservation. Please try again or call us.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -57,6 +97,20 @@ export default function ReservationsSection({ isOpen, onClose }) {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="reservation-form">
+              {errorMessage && (
+                <div className="reservation-error-alert" style={{
+                  padding: '12px 16px',
+                  borderRadius: '8px',
+                  backgroundColor: 'rgba(239, 68, 68, 0.15)',
+                  border: '1px solid rgba(239, 68, 68, 0.4)',
+                  color: '#fca5a5',
+                  fontSize: '0.875rem',
+                  marginBottom: '1rem',
+                  textAlign: 'center'
+                }}>
+                  {errorMessage}
+                </div>
+              )}
               <div className="form-grid">
                 <div className="form-group">
                   <label htmlFor="res-name">Full Name *</label>
@@ -156,11 +210,13 @@ export default function ReservationsSection({ isOpen, onClose }) {
               </div>
 
               <div className="reservation-submit-row">
-                <button type="submit" className="btn-reserve-submit">
-                  <span>Confirm Table Reservation</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
+                <button type="submit" className="btn-reserve-submit" disabled={loading}>
+                  <span>{loading ? 'Confirming Reservation...' : 'Confirm Table Reservation'}</span>
+                  {!loading && (
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  )}
                 </button>
                 <span className="cancellation-policy">
                   Complimentary cancellation up to 6 hours before reservation.
