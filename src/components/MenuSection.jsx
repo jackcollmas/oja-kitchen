@@ -1,8 +1,28 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './MenuSection.css'
 
 export default function MenuSection({ fullMenu, onSelectDish }) {
   const [activeTab, setActiveTab] = useState('mains')
+  const stickyRef = useRef(null)
+  const sentinelRef = useRef(null)
+
+  // Detect when the tabs bar becomes sticky and apply glass effect
+  useEffect(() => {
+    const sentinel = sentinelRef.current
+    const stickyEl = stickyRef.current
+    if (!sentinel || !stickyEl) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // When sentinel is out of view, the tabs bar is stuck
+        stickyEl.classList.toggle('is-stuck', !entry.isIntersecting)
+      },
+      { threshold: 0, rootMargin: '-68px 0px 0px 0px' }
+    )
+
+    observer.observe(sentinel)
+    return () => observer.disconnect()
+  }, [])
 
   const tabs = [
     { key: 'mains', label: 'Grand Mains & Pots' },
@@ -15,6 +35,7 @@ export default function MenuSection({ fullMenu, onSelectDish }) {
   return (
     <section className="menu-section" id="menu">
       <div className="menu-container">
+        {/* Section Header */}
         <div className="menu-header">
           <span className="section-eyebrow">CURATED TASTING</span>
           <h2 className="section-title">
@@ -24,13 +45,19 @@ export default function MenuSection({ fullMenu, onSelectDish }) {
             Every creation is prepared freshly upon order, marrying time-honoured West African cooking
             techniques with modern fine-dining precision.
           </p>
+        </div>
 
-          {/* Category Tabs */}
-          <div className="menu-tabs-bar">
+        {/* Sticky Category Tabs */}
+        {/* Sentinel: zero-height element that tells us when bar becomes stuck */}
+        <div ref={sentinelRef} className="menu-tabs-sentinel" aria-hidden="true" />
+        <div ref={stickyRef} className="menu-tabs-sticky-wrapper">
+          <div className="menu-tabs-bar" role="tablist" aria-label="Menu categories">
             {tabs.map((tab) => (
               <button
                 key={tab.key}
                 type="button"
+                role="tab"
+                aria-selected={activeTab === tab.key}
                 className={`menu-tab-btn ${activeTab === tab.key ? 'active' : ''}`}
                 onClick={() => setActiveTab(tab.key)}
               >
