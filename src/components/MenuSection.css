@@ -3,7 +3,7 @@
   background: var(--color-bg-surface);
   position: relative;
   border-top: 1px solid var(--color-border-subtle);
-  overflow: hidden;
+  /* NOTE: do NOT add overflow:hidden here — it breaks position:sticky on children */
   width: 100%;
 }
 
@@ -264,7 +264,11 @@
 }
 
 .btn-tasting-book {
-  padding: var(--space-4) var(--space-8);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-4) var(--space-6);
   border-radius: var(--radius-full);
   background: linear-gradient(135deg, var(--color-accent-amber) 0%, #ca8a04 100%);
   color: #1a1408;
@@ -272,7 +276,11 @@
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-wider);
   text-transform: uppercase;
-  white-space: nowrap;
+  white-space: normal; /* allow wrapping */
+  word-break: break-word;
+  flex-shrink: 0;
+  max-width: 220px;
+  line-height: 1.4;
   box-shadow: 0 4px 20px rgba(234, 179, 8, 0.3);
   transition: all var(--transition-fast);
 }
@@ -294,6 +302,7 @@
 
   .btn-tasting-book {
     width: 100%;
+    max-width: 100%;
     text-align: center;
   }
 }
