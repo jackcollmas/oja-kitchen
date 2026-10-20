@@ -72,6 +72,17 @@ export default function Navbar({ onOpenReserve }) {
 
       {/* Mobile Drawer Menu */}
       <div className={`mobile-nav-drawer ${mobileMenuOpen ? 'open' : ''}`}>
+        <button
+          type="button"
+          className="btn-mobile-drawer-close"
+          onClick={() => setMobileMenuOpen(false)}
+          aria-label="Close navigation menu"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        </button>
+
         <div className="mobile-nav-inner">
           <div className="mobile-crest-tag">CULINARY EXCELLENCE</div>
           <nav className="mobile-nav-links">
