@@ -180,11 +180,14 @@
 /* Mobile Drawer */
 .mobile-nav-drawer {
   position: fixed;
-  inset: 0;
-  background: rgba(15, 13, 11, 0.98);
-  backdrop-filter: var(--backdrop-blur-lg);
-  -webkit-backdrop-filter: var(--backdrop-blur-lg);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: #0f0d0b;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   transform: translateY(-100%);
@@ -192,7 +195,9 @@
   visibility: hidden;
   pointer-events: none;
   transition: transform var(--transition-normal), opacity var(--transition-normal), visibility var(--transition-normal);
-  z-index: var(--z-drawer);
+  z-index: var(--z-modal);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobile-nav-drawer.open {
@@ -206,8 +211,13 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: var(--space-8);
-  padding: var(--space-8);
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  padding: var(--space-12) var(--space-6) var(--space-8);
+  width: 100%;
+  max-width: 480px;
+  margin: auto;
 }
 
 .mobile-crest-tag {

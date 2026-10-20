@@ -46,27 +46,28 @@ export default function MenuSection({ fullMenu, onSelectDish }) {
             techniques with modern fine-dining precision.
           </p>
         </div>
+      </div>
 
-        {/* Sticky Category Tabs */}
-        {/* Sentinel: zero-height element that tells us when bar becomes stuck */}
-        <div ref={sentinelRef} className="menu-tabs-sentinel" aria-hidden="true" />
-        <div ref={stickyRef} className="menu-tabs-sticky-wrapper">
-          <div className="menu-tabs-bar" role="tablist" aria-label="Menu categories">
-            {tabs.map((tab) => (
-              <button
-                key={tab.key}
-                type="button"
-                role="tab"
-                aria-selected={activeTab === tab.key}
-                className={`menu-tab-btn ${activeTab === tab.key ? 'active' : ''}`}
-                onClick={() => setActiveTab(tab.key)}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
+      {/* Sticky Category Tabs */}
+      <div ref={sentinelRef} className="menu-tabs-sentinel" aria-hidden="true" />
+      <div ref={stickyRef} className="menu-tabs-sticky-wrapper">
+        <div className="menu-tabs-bar" role="tablist" aria-label="Menu categories">
+          {tabs.map((tab) => (
+            <button
+              key={tab.key}
+              type="button"
+              role="tab"
+              aria-selected={activeTab === tab.key}
+              className={`menu-tab-btn ${activeTab === tab.key ? 'active' : ''}`}
+              onClick={() => setActiveTab(tab.key)}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
+      </div>
 
+      <div className="menu-container">
         {/* Menu Grid */}
         <div className="menu-items-grid">
           {currentItems.map((item) => (
@@ -116,7 +117,7 @@ export default function MenuSection({ fullMenu, onSelectDish }) {
             </p>
           </div>
           <a href="#reservations" className="btn-tasting-book">
-            Reserve Tasting Table • ₦ 65,000 / Guest
+            Reserve Tasting Table <br /> • ₦ 65,000 / Guest
           </a>
         </div>
       </div>
