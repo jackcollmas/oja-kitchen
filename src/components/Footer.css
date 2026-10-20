@@ -151,6 +151,35 @@
   text-transform: uppercase;
 }
 
+.newsletter-success-box {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  border-radius: var(--radius-full);
+  color: #4ade80;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  animation: fadeInSuccess 250ms ease-out;
+}
+
+.newsletter-success-box svg {
+  flex-shrink: 0;
+}
+
+@keyframes fadeInSuccess {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .footer-bottom-bar {
   padding-top: var(--space-8);
   border-top: 1px solid rgba(255, 235, 215, 0.05);

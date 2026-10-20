@@ -1,6 +1,17 @@
+import { useState } from 'react'
 import './Footer.css'
 
 export default function Footer({ data }) {
+  const [email, setEmail] = useState('')
+  const [joined, setJoined] = useState(false)
+
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault()
+    if (email.trim()) {
+      setJoined(true)
+    }
+  }
+
   return (
     <footer className="footer-root">
       <div className="footer-container">
@@ -54,14 +65,25 @@ export default function Footer({ data }) {
             <p className="newsletter-desc">
               Subscribe to receive private invitations to chef tasting previews and seasonal secret menus.
             </p>
-            <form className="footer-newsletter-form" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                required
-              />
-              <button type="submit" className="btn-newsletter-join">Join</button>
-            </form>
+            {joined ? (
+              <div className="newsletter-success-box" role="status">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Joined successfully! Welcome to the table.</span>
+              </div>
+            ) : (
+              <form className="footer-newsletter-form" onSubmit={handleNewsletterSubmit}>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  required
+                />
+                <button type="submit" className="btn-newsletter-join">Join</button>
+              </form>
+            )}
           </div>
         </div>
 
