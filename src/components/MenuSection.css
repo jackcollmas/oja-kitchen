@@ -3,6 +3,8 @@
   background: var(--color-bg-surface);
   position: relative;
   border-top: 1px solid var(--color-border-subtle);
+  overflow: hidden;
+  width: 100%;
 }
 
 .menu-container {
