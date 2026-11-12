@@ -7,6 +7,7 @@
   padding: var(--space-5) var(--space-6);
   transition: all var(--transition-normal);
   background: linear-gradient(180deg, rgba(15, 13, 11, 0.85) 0%, rgba(15, 13, 11, 0) 100%);
+  overflow: hidden;
 }
 
 .navbar-scrolled {
@@ -32,6 +33,7 @@
   align-items: center;
   gap: var(--space-3);
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .brand-logo-img {
@@ -74,6 +76,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-8);
+  min-width: 0;
 }
 
 .nav-link {
@@ -111,6 +114,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-4);
+  flex-shrink: 0;
 }
 
 .btn-reserve-nav {
@@ -287,6 +291,12 @@
 }
 
 /* Responsive queries */
+@media (max-width: 1180px) {
+  .navbar-links-desktop {
+    gap: var(--space-6);
+  }
+}
+
 @media (max-width: 992px) {
   .navbar-links-desktop {
     display: none;
